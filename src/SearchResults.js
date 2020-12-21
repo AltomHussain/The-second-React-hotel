@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 export default function SearchResults({ results }) {
+  const [isSelected, setIsSelected] = useState([]);
+  function handleClick(id) {
+    if (!isSelected.includes(id)) {
+      setIsSelected([...isSelected, id]);
+    } else {
+      setIsSelected(isSelected.filter(p => p !== id));
+    }
+  }
   //Table head function
   function tableHead() {
     const topRow = [
@@ -18,16 +26,18 @@ export default function SearchResults({ results }) {
       return <th key={index}>{header}</th>;
     });
   }
-  let a = "30";
-  let b = "33";
 
   //console.log(moment(a).diff(moment(b)))
   //table data function
   function tableData(results) {
     return results.map((data, index) => {
       return (
-        <tr key={index}>
-          <th scope="row">{data.id}</th>
+        <tr
+          key={data}
+          onClick={() => handleClick(index)}
+          className={isSelected.includes(index) ? "selected" : null}
+        >
+          <th scope="row">{index}</th>
           <td>{data.title} </td>
           <td>{data.firstName} </td>
           <td>{data.surname} </td>
@@ -46,9 +56,7 @@ export default function SearchResults({ results }) {
   return (
     <div>
       <table className="table">
-        <thead>
-          <tr>{tableHead()}</tr>
-        </thead>
+        <thead>{tableHead()}</thead>
         <tbody>{tableData(results)}</tbody>
       </table>
     </div>
