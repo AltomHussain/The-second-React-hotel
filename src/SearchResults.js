@@ -33,11 +33,11 @@ export default function SearchResults({ results }) {
     return results.map((data, index) => {
       return (
         <tr
-          key={data}
+          key={index}
           onClick={() => handleClick(index)}
           className={isSelected.includes(index) ? "selected" : null}
         >
-          <th scope="row">{index}</th>
+          <th scope="row">{data.id}</th>
           <td>{data.title} </td>
           <td>{data.firstName} </td>
           <td>{data.surname} </td>
@@ -48,6 +48,7 @@ export default function SearchResults({ results }) {
           <td>
             {moment(data.checkOutDate).diff(moment(data.checkInDate), "days")}{" "}
           </td>
+          <td>Show profile</td>
         </tr>
       );
     });

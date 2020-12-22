@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SearchButton() {
+export default function SearchButton({ searchInput, handleSearchInput }) {
   return (
     <div className="search-row">
       <input
@@ -8,6 +8,9 @@ export default function SearchButton() {
         id="customerName"
         className="form-control"
         placeholder="Customer name"
+        name="input-name"
+        value={searchInput}
+        onChange={handleSearchInput}
       />
       <button className="btn btn-primary">Search</button>
     </div>

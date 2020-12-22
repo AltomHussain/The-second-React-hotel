@@ -213,3 +213,8 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 **Hint:** Try using the `.sort()` method with a callback to do custom sorting.
 
 **Test:** Each column in the table should be clickable to sort results in ascending or descending order.
+
+Problems to sort out later:
+1-empty the search bar after submition
+2-make the search values chase sensitive
+3-if you did your search you need a way to go back to reload the tables.
