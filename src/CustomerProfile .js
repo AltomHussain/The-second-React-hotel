@@ -13,8 +13,13 @@ export default function CustomerProfile({ id }) {
   }, [id]);
   return (
     <div>
-      {`Customer ${id} profile`}
-      <p>{showCustomerInfo.firstName}</p>
+      <h3> {`Customer ${id} profile🧑 👇`}</h3>
+      <br />
+      <p>First name:{showCustomerInfo.firstName}</p>
+      <p>Surname:{showCustomerInfo.surname}</p>
+      <p>Email:{showCustomerInfo.email}</p>
+      <p>Phone:{showCustomerInfo.phoneNumber}</p>
+      <p>Vip: {showCustomerInfo.vip ? "Yes" : "No"}</p>
     </div>
   );
 }

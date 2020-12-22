@@ -71,7 +71,7 @@ export default function SearchResults({ results }) {
         <thead>{tableHead()}</thead>
         <tbody>{tableData(results)}</tbody>
       </table>
-      <h3>{showProfileId ? <CustomerProfile id={showProfileId} /> : null}</h3>
+      {showProfileId ? <CustomerProfile id={showProfileId} /> : null}
     </div>
   );
 }
