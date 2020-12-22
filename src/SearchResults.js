@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile ";
 export default function SearchResults({ results }) {
   const [isSelected, setIsSelected] = useState([]);
+  const [showProfileId, setShowProfileId] = useState("");
+
+  function showCustomerProfile(id) {
+    setShowProfileId(id);
+  }
+
   function handleClick(id) {
     if (!isSelected.includes(id)) {
       setIsSelected([...isSelected, id]);
@@ -48,7 +55,11 @@ export default function SearchResults({ results }) {
           <td>
             {moment(data.checkOutDate).diff(moment(data.checkInDate), "days")}{" "}
           </td>
-          <td>Show profile</td>
+          <td>
+            <button onClick={() => showCustomerProfile(data.id)}>
+              Show profile
+            </button>
+          </td>
         </tr>
       );
     });
@@ -60,6 +71,7 @@ export default function SearchResults({ results }) {
         <thead>{tableHead()}</thead>
         <tbody>{tableData(results)}</tbody>
       </table>
+      <h3>{showProfileId ? <CustomerProfile id={showProfileId} /> : null}</h3>
     </div>
   );
 }
