@@ -135,7 +135,8 @@ tr {
   /* border: solid 2px #9d0191; */
   margin: 10px 60px;
   color: green;
-  display: flex;
+  /* display: flex; */
+  flex-wrap: wrap;
   padding: 20px;
 }
 .resturant > h3 {
