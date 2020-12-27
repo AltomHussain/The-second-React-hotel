@@ -5,7 +5,7 @@ const Restaurant = () => {
   // const [orders, setOrders] = useState(0)
 
   return (
-    <div>
+    <div className="resturant">
       <h3>Restaurant Orders</h3>
       <ul>
         <Order orderType="Pizza" />

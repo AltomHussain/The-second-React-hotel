@@ -28,15 +28,15 @@ export default function TouristInfoCards() {
     }
   ];
   return (
-    <div>
+    <div className="tourist-cards">
       {citiesInfo.map((city, index) => {
         return (
           <div className="card" key={index}>
-            <img src={city.image} className="card-img-top" alt="..." />
+            <img src={city.image} className="card-img-top " alt="..." />
             <div className="card-body">
               <h5 className="card-title">{city.name}</h5>
               <p className="card-text">{city.description}</p>
-              <a href={city.link} className="btn btn-primary">
+              <a href={city.link} className="card-btn btn ">
                 Visit City
               </a>
             </div>

@@ -12,8 +12,8 @@ export default function CustomerProfile({ id }) {
       });
   }, [id]);
   return (
-    <div>
-      <h3> {`Customer ${id} profile🧑 👇`}</h3>
+    <div className="customer-profile">
+      <h3> {`Customer ${id} Profile🧑 👇`}</h3>
       <br />
       <p>First name:{showCustomerInfo.firstName}</p>
       <p>Surname:{showCustomerInfo.surname}</p>

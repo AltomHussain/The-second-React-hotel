@@ -7,8 +7,9 @@ export default function Order({ orderType }) {
   };
 
   return (
-    <li>
-      {orderType}: {orders} <RestaurantButton orderOne={orderOne} />
+    <li className="order-list">
+      <h3>{orderType}</h3> : <p>{orders}</p>{" "}
+      <RestaurantButton orderOne={orderOne} />
     </li>
   );
 }

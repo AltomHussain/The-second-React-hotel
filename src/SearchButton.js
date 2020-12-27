@@ -12,7 +12,7 @@ export default function SearchButton({ searchInput, handleSearchInput }) {
         value={searchInput}
         onChange={handleSearchInput}
       />
-      <button className="btn btn-primary">Search</button>
+      <button className="btn search-btn">Search</button>
     </div>
   );
 }

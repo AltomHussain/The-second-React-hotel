@@ -27,7 +27,8 @@ export default function SearchResults({ results }) {
       "Room Id",
       "Check in date",
       "Check out date",
-      "number of nights"
+      "number of nights",
+      "Show Profiles"
     ];
     return topRow.map((header, index) => {
       return <th key={index}>{header}</th>;
@@ -56,8 +57,12 @@ export default function SearchResults({ results }) {
             {moment(data.checkOutDate).diff(moment(data.checkInDate), "days")}{" "}
           </td>
           <td>
-            <button onClick={() => showCustomerProfile(data.id)}>
-              Show profile
+            <button
+              type="button"
+              onClick={() => showCustomerProfile(data.id)}
+              className="btn show-Profile-btn"
+            >
+              Show Profile
             </button>
           </td>
         </tr>
